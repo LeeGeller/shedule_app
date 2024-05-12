@@ -21,4 +21,4 @@ class Newsletter(admin.ModelAdmin):
 @admin.register(MailingAttempt)
 class MailingAttempt(admin.ModelAdmin):
     list_display = (
-        'pk', 'status_of_last_attempt', 'clients_list', 'server_response',)
+        'pk', 'status_of_last_attempt', 'clients_list', 'mailing_list', 'server_response', 'time_attempt',)

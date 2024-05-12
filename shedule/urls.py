@@ -3,16 +3,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
-from shedule.views import ClientsListView, ClientCreateView, ClientUpdateView, ClientDeleteView, \
-    NewsletterListView, NewsletterCreateView, NewsletterUpdateView, NewsletterDeleteView, TextForNewsletterListView, \
-    TextForNewsletterCreateView, TextForNewsletterUpdateView, TextForNewsletterDeleteView, \
-    MailingAttemptListView
+from shedule.views.client import ClientsListView, ClientCreateView, ClientUpdateView, ClientDeleteView
+from shedule.views.mailing_attempt import MailingAttemptListView
+from shedule.views.newsletter import NewsletterListView, NewsletterCreateView, NewsletterUpdateView, \
+    NewsletterDeleteView
+from shedule.views.text_for_newsletter import TextForNewsletterListView, TextForNewsletterCreateView, \
+    TextForNewsletterUpdateView, TextForNewsletterDeleteView
 
 app_name = SheduleConfig.name
 
 urlpatterns = [
     path("", MailingAttemptListView.as_view(), name="mailingattempt_list"),
-
 
     path("client_list/", ClientsListView.as_view(), name="client_list"),
     path("client_form/", ClientCreateView.as_view(), name="client_form"),

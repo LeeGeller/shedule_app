@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django_apscheduler",
+    "bootstrap_datepicker_plus",
 
     'shedule',
 ]
@@ -133,3 +135,13 @@ APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
 
 SCHEDULER_REDIS_URL = f'postgresql://{os.getenv("USER")}:{os.getenv("PASSWORD")}@localhost/{os.getenv("NAME")}'
+
+EMAIL_HOST = "smtp.yandex.ru"
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "kristinabudni@yandex.ru"
+EMAIL_HOST_PASSWORD = os.getenv("pass_email")
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
